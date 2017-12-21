@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block content %}
+<div class="w3-content">
+    <div class="w3-panel w3-large">
+        <h2 class="w3-text-teal">Uploaded files:</h2>
+        <ul class="w3-ul w3-border w3-round-large w3-light-grey">
+            {% for obj in documents %}
+            <li>
+                <div class="w3-row">
+                    <div class="w3-col s9">
+                        <a href="{{ obj.document.url }}" style="text-decoration: none" target="_blank">{{ obj.name }} {{ obj.document.name }}</a></br>
+                        <small>(Uploaded at: {{ obj.uploaded_at }})</small>
+                    </div>
+                    <div class="w3-col s1">
+                        <a href="{{ obj.document.url }}" target="_blank"><i class="fa fa-eye w3-padding-2 w3-text-blue w3-right" style="font-size:30px"></i></a>
+                    </div>
+                    <div class="w3-col s1">
+                        <a href="#" download><i class="fa fa-download w3-padding-2 w3-text-green w3-right" style="font-size:30px"></i></a>
+                    </div>
+                    <div class="w3-col s1">
+                        <a href="{% url 'report' %}"><i class="fa fa-ban w3-padding-2 w3-text-red w3-right" style="font-size:30px"></i></a>
+                    </div>
+            </li>
+
+            {% endfor %}
+        </ul>
+        </div>
+    </div>
+    {% endblock %}

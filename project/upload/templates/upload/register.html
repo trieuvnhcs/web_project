@@ -1,0 +1,48 @@
+{% extends 'base1.html' %} {% load static %} {% block content %}
+<div class="w3-white w3-container" style="padding:238px 20px">
+
+    <div class="w3-row w3-content">
+
+
+        <div class="w3-col s6 w3-container w3-white w3-center">
+            <h1 class="w3-margin w3-jumbo w3-text-teal">KT-Upload</h1>
+            <p class="w3-xlarge w3-text-black">v1.0</p>
+
+        </div>
+
+
+        <div class="w3-col s6 w3-teal w3-padding w3-round-large">
+
+
+            <form class="w3-container" action="/action_page.php">
+                <div class="w3-section">
+                    <h2>Register</h2>
+                    <label><b>Username</b></label>
+                    <input class="w3-input w3-border w3-round-large w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+                    <label><b>Email</b></label>
+                    <input type="text" class="w3-input w3-border w3-round-large w3-margin-bottom" placeholder="Enter Email" name="email" required>
+
+                    <label><b>Password</b></label>
+                    <input type="password" class="w3-input w3-border w3-round-large w3-margin-bottom" placeholder="Enter Password" name="psw" required>
+
+                    <label><b>Repeat Password</b></label>
+                    <input type="password" class="w3-input w3-border w3-round-large w3-margin-bottom" placeholder="Repeat Password" name="psw-repeat" required>
+                    <input type="checkbox" checked="checked"> Remember me
+                    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+
+                    <button class="w3-button w3-round-large w3-block w3-green w3-section w3-padding" type="submit" class="signupbtn">Sign Up</button>
+                    <button class="w3-button w3-round-large w3-block w3-red w3-section w3-padding" type="button" class="w3-button">Cancel</button>
+                </div>
+
+        </div>
+        </form>
+
+
+    </div>
+</div>
+</div>
+
+
+
+{% endblock %}
