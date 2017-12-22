@@ -5,7 +5,7 @@ from django.db import models
 
 
 class Document(models.Model):
-    name = models.CharField(max_length=20, blank=False)
-    description = models.CharField(max_length=255, blank=True)
+    name = models.CharField(max_length=100, blank=False)
+    description = models.TextField()
     document = models.FileField(upload_to='', validators=[validate_file_extension])
     uploaded_at = models.DateTimeField(auto_now_add=True)

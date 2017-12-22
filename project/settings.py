@@ -26,7 +26,8 @@ SECRET_KEY = 'r$n9()ro=c-*e5m103zp=c!jfqx3dyln+@17f-)wl=k_qg7yca'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    
+    'trieuvnhcs.pythonanywhere.com',
+    '127.0.0.1'
 ]
 
 

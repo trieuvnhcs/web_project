@@ -1,27 +1,29 @@
 {% extends 'base1.html' %} {% block content %}
-<div class="w3-container w3-content  w3-large w3-light-grey w3-round-large w3-padding" style="margin-bottom:100px">
-    <h3 class="w3-text-teal">Uploaded Files</h3>
-    <ul class="w3-ul w3-border w3-round-large w3-white">
-        {% for obj in documents %}
-        <li>
-            <div class="w3-row">
-                <a href="{{ obj.document.url }}" style="text-decoration: none" class="w3-large w3-text-teal" target="_blank">{{ obj.name }}</a><br>
-                <small><a href="{{ obj.document.url }}" style="text-decoration: none" target="_blank">{{ obj.document.name }}</a></small>
-                <small class="w3-text-grey">(Date: {{ obj.uploaded_at }})</small>
-            </div>
-            <div class="w3-row">
-                <div class="w3-col s4 m1 w3-center w3-padding">
-                    <a href="{{ obj.document.url }}" target="_blank"><i class="fa fa-eye w3-padding-2 w3-text-blue" style="font-size:20px"></i></a>
+<div class="w3-container w3-content  w3-large w3-teal w3-round-large w3-padding" style="margin-bottom:100px">
+    <div class="w3-container">
+        <h2 class="w3-text-white">Uploaded Files</h2>
+        <ul class="w3-ul w3-border w3-round-large w3-white">
+            {% for obj in documents %}
+            <li>
+                <div class="w3-row">
+                    <a href="{{ obj.document.url }}" style="text-decoration: none" class="w3-large w3-text-teal" target="_blank">{{ obj.name }}</a><br>
+                    <small><a href="{{ obj.document.url }}" style="text-decoration: none" target="_blank">{{ obj.document.name }}</a></small>
+                    <small class="w3-text-grey">(Date: {{ obj.uploaded_at }})</small>
                 </div>
-                <div class="w3-col s4 m1 w3-center w3-padding">
-                    <a href="#" download><i class="fa fa-download w3-padding-2 w3-text-teal" style="font-size:20px"></i></a>
+                <div class="w3-row">
+                    <div class="w3-col s4 m1 w3-center w3-padding">
+                        <a href="{{ obj.document.url }}" target="_blank"><i class="fa fa-eye w3-padding-2 w3-text-blue" style="font-size:20px"></i></a>
+                    </div>
+                    <div class="w3-col s4 m1 w3-center w3-padding">
+                        <a href="#" download><i class="fa fa-download w3-padding-2 w3-text-teal" style="font-size:20px"></i></a>
+                    </div>
+                    <div class="w3-col s4 m1 w3-center w3-padding">
+                        <a href="{% url 'report' %}"><i class="fa fa-ban w3-padding-2 w3-text-red" style="font-size:20px"></i></a>
+                    </div>
                 </div>
-                <div class="w3-col s4 m1 w3-center w3-padding">
-                    <a href="{% url 'report' %}"><i class="fa fa-ban w3-padding-2 w3-text-red" style="font-size:20px"></i></a>
-                </div>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
 {% endblock %}
