@@ -1,34 +1,22 @@
 {% extends 'base1.html' %} {% block content %}
 
-<div class="w3-white w3-container" style="padding:238px 20px">
+<div class=" w3-container w3-content w3-light-grey w3-round-large w3-padding">
 
-    <div class="w3-row w3-content">
-
-
-        <div class="w3-col s6 w3-container w3-white w3-center">
-            <h1 class="w3-margin w3-jumbo w3-text-teal">KT-Upload</h1>
-            <p class="w3-xlarge w3-text-black">v1.0</p>
-
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %} {% for field in form %}
+        <div class="w3-form">
+            <h4 class="w3-text-teal">{{ field.label_tag }}</h4>
+            <p>{{ field }}</p>
         </div>
+        {% endfor %}
 
-
-        <div class="w3-col s6 w3-teal w3-padding w3-round-large">
-            <form method="post" enctype="multipart/form-data">
-
-                {% csrf_token %} {% for field in form %}
-                <div class="w3-form">
-                    <h3 class="w3-text-white">{{ field.label_tag }}</h3>
-                    <p>{{ field }}</p>
-                </div>
-                {% endfor %}
-
-                <button class="w3-button w3-green w3-round-large" type="submit">Upload</button>
-                <button class="w3-button w3-red w3-round-large" type="reset">Reset</button>
-            </form>
-        </div>
-    </div>
-
+        <button class="w3-button w3-green w3-round-large" type="submit">Upload</button>
+        <button class="w3-button w3-red w3-round-large" type="reset">Reset</button>
+    </form>
 
 </div>
+
+
+
 
 {% endblock %}
