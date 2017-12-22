@@ -9,18 +9,21 @@
                     <a href="{{ obj.document.url }}" style="text-decoration: none" class="w3-large w3-text-teal" target="_blank">{{ obj.name }}</a><br>
                     <small><a href="{{ obj.document.url }}" style="text-decoration: none" target="_blank">{{ obj.document.name }}</a></small>
                     <small class="w3-text-grey">(Date: {{ obj.uploaded_at }})</small>
+
                 </div>
                 <div class="w3-row">
                     <div class="w3-col s4 m1 w3-center w3-padding">
-                        <a href="{{ obj.document.url }}" target="_blank"><i class="fa fa-eye w3-padding-2 w3-text-blue" style="font-size:20px"></i></a>
+                        <a href="https://docs.google.com/gview?url=http://trieuvnhcs.pythonanywhere.com/storage/{{ obj.document.name }}&embedded=true" target="_blank"><i class="fa fa-eye w3-padding-2 w3-text-blue" style="font-size:20px"></i></a>
                     </div>
                     <div class="w3-col s4 m1 w3-center w3-padding">
-                        <a href="#" download><i class="fa fa-download w3-padding-2 w3-text-teal" style="font-size:20px"></i></a>
+                        <a href="{{ obj.document.url }}" download><i class="fa fa-download w3-padding-2 w3-text-teal" style="font-size:20px"></i></a>
                     </div>
                     <div class="w3-col s4 m1 w3-center w3-padding">
                         <a href="{% url 'report' %}"><i class="fa fa-ban w3-padding-2 w3-text-red" style="font-size:20px"></i></a>
                     </div>
+
                 </div>
+
             </li>
             {% endfor %}
         </ul>
