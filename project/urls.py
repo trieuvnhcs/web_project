@@ -5,14 +5,14 @@ from django.conf.urls.static import static
 
 from project.upload import views
 
-
 urlpatterns = [
     url(r'^$', views.home, name='home'),
-    url(r'^uploads/allfiles/$', views.all_files, name='all_files'),
-    url(r'^uploads/form/$', views.model_form_upload, name='model_form_upload'),
-    url(r'^uploads/login/$', views.login, name='login'),
-    url(r'^uploads/register/$', views.register, name='register'),
-    url(r'^uploads/report/$', views.report, name='report'),
+    url(r'^all_files/$', views.all_files, name='all_files'),
+    url(r'^upload/$', views.model_form_upload, name='model_form_upload'),
+    url(r'^login/$', views.login, name='login'),
+    url(r'^register/$', views.register, name='register'),
+    url(r'^report/(?P<document_id>[0-9]+)/$', views.report, name='report'),
+    url(r'^doc/(?P<document_id>[0-9]+)/$', views.one_file, name='one_file'),
     url(r'^admin/', admin.site.urls),
 ]
 

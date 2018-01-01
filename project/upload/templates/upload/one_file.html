@@ -1,14 +1,16 @@
 {% extends 'base1.html' %} {% block content %}
 <div class="w3-container w3-content  w3-large w3-teal  w3-padding" style="margin-bottom:100px">
     <div class="w3-container">
-        <h2 class="w3-text-white">Uploaded Files</h2>
+        <h2 class="w3-text-white">Document</h2>
         <ul class="w3-ul w3-border  w3-white">
-            {% for obj in documents %}
+            {% for obj in d %}
             <li>
                 <div class="w3-row">
-                    <a href="{% url 'one_file' obj.id %}" style="text-decoration: none" class="w3-large w3-text-teal" target="_blank">{{ obj.name }}</a><br>
+                    <a href="https://docs.google.com/gview?url=http://trieuvnhcs.pythonanywhere.com/storage/{{ obj.document.name}}" style="text-decoration: none" class="w3-large w3-text-teal" target="_blank">{{ obj.name }}</a><br>
                     <small><a href="https://docs.google.com/gview?url=http://trieuvnhcs.pythonanywhere.com/storage/{{ obj.document.name  }}" style="text-decoration: none" target="_blank">{{ obj.document.name }}</a></small>
                     <small class="w3-text-grey">(Date: {{ obj.uploaded_at }})</small>
+
+
 
                 </div>
                 <div class="w3-row">
