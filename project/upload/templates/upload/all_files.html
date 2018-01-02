@@ -3,29 +3,36 @@
     <div class="w3-container">
         <h2 class="w3-text-white">Uploaded Files</h2>
         <ul class="w3-ul w3-border  w3-white">
+            <!-- for loop  -->
             {% for obj in documents %}
             <li>
                 <div class="w3-row">
-                    <a href="{% url 'one_file' obj.id %}" style="text-decoration: none" class="w3-large w3-text-teal" target="_blank">{{ obj.name }}</a><br>
-                    <small><a href="https://docs.google.com/gview?url=http://trieuvnhcs.pythonanywhere.com/storage/{{ obj.document.name  }}" style="text-decoration: none" target="_blank">{{ obj.document.name }}</a></small>
+                    <!-- document name  -->
+                    <a href="{% url 'one_file' obj.id %}" style="text-decoration: none" class="w3-large w3-text-teal">{{ obj.name }}</a><br>
+                    <!-- full document name  -->
+                    <small><a href="https://docs.google.com/gview?url=http://trieuvnhcs.pythonanywhere.com/storage/{{ obj.document.name  }}" 
+                        style="text-decoration: none" target="_blank">{{ obj.document.name }}</a></small>
+                    <!-- datetime uploaded  -->
                     <small class="w3-text-grey">(Date: {{ obj.uploaded_at }})</small>
-
                 </div>
+
                 <div class="w3-row">
+                    <!-- document viewer  -->
                     <div class="w3-col s4 m1 w3-center w3-padding">
                         <a href="https://docs.google.com/gview?url=http://trieuvnhcs.pythonanywhere.com/storage/{{ obj.document.name }}&embedded=true" target="_blank"><i class="fa fa-eye w3-padding-2 w3-text-blue" style="font-size:20px"></i></a>
                     </div>
+                    <!-- download  -->
                     <div class="w3-col s4 m1 w3-center w3-padding">
                         <a href="{{ obj.document.url }}" download><i class="fa fa-download w3-padding-2 w3-text-teal" style="font-size:20px"></i></a>
                     </div>
+                    <!-- report document  -->
                     <div class="w3-col s4 m1 w3-center w3-padding">
                         <a href="{% url 'report' obj.id %}"><i class="fa fa-ban w3-padding-2 w3-text-red" style="font-size:20px"></i></a>
                     </div>
-
                 </div>
-
             </li>
             {% endfor %}
+            <!-- end for loop  -->
         </ul>
     </div>
 </div>

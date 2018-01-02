@@ -3,29 +3,32 @@
     <div class="w3-container">
         <h2 class="w3-text-white">Document</h2>
         <ul class="w3-ul w3-border  w3-white">
-            {% for obj in d %}
+            <!-- obj = d  -->
+            {% for obj in document %}
             <li>
                 <div class="w3-row">
+                    <!-- document name -->
                     <a href="https://docs.google.com/gview?url=http://trieuvnhcs.pythonanywhere.com/storage/{{ obj.document.name}}" style="text-decoration: none" class="w3-large w3-text-teal" target="_blank">{{ obj.name }}</a><br>
+                    <!-- full document name  -->
                     <small><a href="https://docs.google.com/gview?url=http://trieuvnhcs.pythonanywhere.com/storage/{{ obj.document.name  }}" style="text-decoration: none" target="_blank">{{ obj.document.name }}</a></small>
+                    <!-- datetime uploaded  -->
                     <small class="w3-text-grey">(Date: {{ obj.uploaded_at }})</small>
-
-
-
                 </div>
+
                 <div class="w3-row">
+                    <!-- viewer  -->
                     <div class="w3-col s4 m1 w3-center w3-padding">
                         <a href="https://docs.google.com/gview?url=http://trieuvnhcs.pythonanywhere.com/storage/{{ obj.document.name }}&embedded=true" target="_blank"><i class="fa fa-eye w3-padding-2 w3-text-blue" style="font-size:20px"></i></a>
                     </div>
+                    <!-- download  -->
                     <div class="w3-col s4 m1 w3-center w3-padding">
                         <a href="{{ obj.document.url }}" download><i class="fa fa-download w3-padding-2 w3-text-teal" style="font-size:20px"></i></a>
                     </div>
+                    <!-- report  -->
                     <div class="w3-col s4 m1 w3-center w3-padding">
                         <a href="{% url 'report' obj.id %}"><i class="fa fa-ban w3-padding-2 w3-text-red" style="font-size:20px"></i></a>
                     </div>
-
                 </div>
-
             </li>
             {% endfor %}
         </ul>

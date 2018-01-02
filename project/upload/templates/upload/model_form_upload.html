@@ -1,5 +1,4 @@
 {% extends 'base1.html' %} {% block content %}
-
 <div class=" w3-container w3-content w3-teal w3-padding" style="max-width:500px">
     <div class="w3-container">
         <h2>Upload</h2>
@@ -8,8 +7,6 @@
             <div class="w3-form">
                 <h4 class="w3-text-white">{{ field.label_tag }}</h4>
                 <p>{{ field }}</p>
-
-
             </div>
             {% endfor %}
 
@@ -17,10 +14,5 @@
             <button class="w3-button w3-red " type="reset">Reset</button>
         </form>
     </div>
-
 </div>
-
-
-
-
 {% endblock %}

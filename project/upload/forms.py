@@ -2,7 +2,6 @@ from django import forms
 
 from project.upload.models import Document,Report
 
-
 class DocumentForm(forms.ModelForm):
     class Meta:
         model = Document

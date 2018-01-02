@@ -46,16 +46,12 @@
             <a href="{% url 'home' %}" class="w3-bar-item w3-button w3-padding-large w3-hover-red">Home</a>
             <a href="{% url 'all_files' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Explorer</a>
             <a href="{% url 'model_form_upload' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Upload</a>
-            <a href="{% url 'login' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-green  w3-right">Login</a>
-            <a href="{% url 'register' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white  w3-right">Register</a>
         </div>
 
         <!-- Navbar on small screens -->
         <div id="navDemo" class="w3-bar-block w3-blue-grey w3-hide w3-hide-large w3-hide-medium w3-large">
             <a href="{% url 'model_form_upload' %}" class="w3-bar-item w3-button w3-padding-large">Upload</a>
             <a href="{% url 'all_files' %}" class="w3-bar-item w3-button w3-padding-large">Explorer</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large">Login</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large">Register</a>
         </div>
     </div>
 
@@ -70,12 +66,9 @@
     <!-- Content -->
     {% endblock %}
 
-
-
     <!-- Footer -->
     <footer class="w3-bottom w3-light-grey w3-padding">
         <div class="w3-row">
-
             <b class="w3-center">TEAM9</b>
             <b class="w3-right">December 2017</b>
         </div>

@@ -5,7 +5,6 @@ from django.dispatch import receiver
 
 from django.db import models
 
-
 class Document(models.Model):
     name = models.CharField(max_length=100, blank=False)
     document = models.FileField(upload_to='', validators=[validate_file_extension])
